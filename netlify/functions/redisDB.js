@@ -1,7 +1,7 @@
 "use strict";
 const { Redis } = require('ioredis');
 const client = new Redis({
-    port: 19918, // Redis port
+    port: 18181, // Redis port
     host: "redis-18181.c44.us-east-1-2.ec2.cloud.redislabs.com", // Redis host
     username: "default", // needs Redis >= 6
     password: "QmtiJzIOimHlSVw0ZwOb6K8NagC14GJj",

@@ -1,11 +1,9 @@
 {
-  "name": "Proyecto 2",
+  "name": "Proyecto 3",
   "version": "1.0.0",
   "description": "Proyecto 2",
   "author": "Ronaldo Rodríguez - Brandon Rodriguez",
-  "license": "Unlicense",
-  "dependencies": {
-	  "mongodb": "latest",
-		"amqplib": "latest"
+  "devDependencies": {
+	  "ioredis": "latest"
   }
 }

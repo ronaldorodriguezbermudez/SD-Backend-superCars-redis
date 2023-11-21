@@ -16,9 +16,9 @@ exports.handler = async (event, context) => {
     const keys = (await redis.keys('model_*')).filter(id => id !== 'model_N');
     const models = await redis.mget(keys);
 
-    models.forEach(JSON.parse);
+    const parsedmanumodels = models.map(model => JSON.parse(model));
 
-    return { statusCode: 200, headers, body: JSON.stringify(models) };
+    return { statusCode: 200, headers, body: JSON.stringify(parsedmanumodels) };
   } catch (error) {
     console.log(error);
     return { statusCode: 400, headers, body: JSON.stringify(error) };

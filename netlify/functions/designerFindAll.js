@@ -16,9 +16,9 @@ exports.handler = async (event, context) => {
     const keys = (await redis.keys('designer_*')).filter(id => id !== 'designer_N');
     const designers = await redis.mget(keys);
 
-    designers.forEach(JSON.parse);
+    const parsedDesigners = designers.map(designer => JSON.parse(designer));
 
-    return { statusCode: 200, headers, body: JSON.stringify(designers) };
+    return { statusCode: 200, headers, body: JSON.stringify(parsedDesigners) };
   } catch (error) {
     console.log(error);
     return { statusCode: 400, headers, body: JSON.stringify(error) };
